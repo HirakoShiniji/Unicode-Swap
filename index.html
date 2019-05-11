@@ -1,0 +1,56 @@
+<style>
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-right: 200pt;
+    right: 20pt;
+}
+</style>
+<h1>Liab's Encryptor v1.0</h1>
+<input style="width: 500pt;" placeholder="the text will be encrypted will be here..." id="test">
+<button onclick="go()">Encrypt</button>
+&nbsp;
+<label id="text"></label>
+
+<script>
+var A ="ѭ";
+var B ="Ֆ";
+var C ="מ"
+var out="";
+function go(){
+    Encrypt();
+}
+function echo(){
+   var Text=document.getElementById("text");
+   Text.textContent="Encrypted String : " + out;
+   if (out.includes("a")){
+    Text.textContent="Encrypted String : ѭ";
+} if(out.includes("a" + "b")){
+    Text.textContent="Encrypted String : " + A +  B;
+}
+if(out.includes("b" + "a")){
+    Text.textContent="Encrypted String : "+ B + A   ;
+}
+if(out.includes("b" + "c" + "a")){
+    Text.textContent="Encrypted String : "+ B + C + A   ;
+}
+if(out.includes("c" + "b" + "a")){
+    Text.textContent="Encrypted String : " + C  + B +  A   ;
+}
+if(out.includes("b" + "a")){
+    Text.textContent="Encrypted String : " + B +  A   ;
+}
+if(out.includes("b" + "c")){
+    Text.textContent="Encrypted String : " + B +  C  ;
+}
+if(out.includes("c" + "b")){
+    Text.textContent="Encrypted String : " + C +  B   ;
+}
+}
+
+function Encrypt(){
+out=document.getElementById("test").value;
+
+echo();
+}
+
+</script>
